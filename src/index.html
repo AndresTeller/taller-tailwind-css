@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portafolio</title>
 
     <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,27 +13,31 @@
       href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
       rel="stylesheet"
     />
-
     <!-- Conexión Tailwind + Mi Css -->
     <link rel="stylesheet" href="../dist/output.css" />
   </head>
-
   <body>
-    <header>
-      <img src="" alt="" />
-      <section>
-        <a href="">Inicio</a>
-        <a href="">¿Qué hacemos?</a>
-        <a href="">Opiniones</a>
-        <a href="">Contacto</a>
-      </section>
-    </header>
-    
+    <div class="fixed bottom-0 w-full lg:bottom-auto lg:top-0">
+      <nav class="grid grid-cols-3 bg-colorPrincipal h-12 gap-2 justify-items-center items-center lg:grid-cols-2">
+        <div class="col-start-2 lg:col-start-1 lg:justify-self-start">
+          <img src="/assets/logo_azul_grande.png" class="w-10 rounded-full lg:ml-4">
+        </div>
+        <div class="justify-self-end lg:hidden">
+          <img src="/assets/hamburguesa.svg" class="w-6 mr-4">
+        </div>
+        <div class="hidden lg:block lg:menu lg:justify-self-end mr-4">
+          <a href="#">Encargados</a>
+          <a href="#">¿Que hacemos?</a>
+          <a href="#">Opiniones</a>
+          <a href="#">Contacto</a>
+        </div>
+      </nav>
+    </div>
     <!-- Section de encargados -->
     <section>
       <h1>Encargados</h1>
       <article>
-        <img src="/assets/perfil-hombre.jpg" alt="perfil-hombre">
+        <img src="/assets/perfil-hombre.jpg">
         <p>
           Lorem ipsum dolor sit amet consectetur. Arcu sociis eget duis id. Eu velit sed sed euismod odio orci penatibus. Tellus
         tellus tempus nibh dapibus proin. Ipsum elementum dictum habitasse sit et a.
@@ -48,7 +52,6 @@
         </p>
       </article>
     </section>
-    
     <!-- Section ¿Que hacemos? -->
     <section>
       <h2>¿Que hacemos?</h2>
@@ -64,7 +67,6 @@
       </ul>
       <img src="/assets/proyectos.jpg" alt="imagen-proyectos">
     </section>
-
     <!-- Seccion opiniones -->
     <section>
       <h2>Opiniones</h2>
@@ -92,7 +94,6 @@
         </p>
       </article>
     </section>
-
     <!-- Seccion contacto -->
     <section>
       <h2>Contactos</h2>

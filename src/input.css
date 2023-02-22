@@ -3,20 +3,27 @@
 @tailwind utilities;
 
 @layer base {
-  /* Para agregar bold y semibold usar: font-bold, font-semibold */
-  h1 {
-    @apply text-white font-nunito font-normal text-3xl;
+  h1, h2, p, a {
+    @apply font-nunito;
   }
-  h2 {
-    @apply text-white font-nunito text-2xl;
+
+  h1, h2 {
+    @apply text-colorPrincipal;
   }
-  p {
-    @apply text-white font-nunito text-base;
+
+  .menu a{
+    @apply text-colorCuaternario px-3 font-semibold hover:text-colorSecundario;
   }
 }
 
 @layer components {
-  .menu {
-    @apply bg-colorPrincipal;
-  }
+  
 }
+
+@layer utilities {
+
+}
+
+/* @screen(xl) {
+  
+} */

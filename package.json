@@ -70,5 +70,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndresTeller/taller-tailwind-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndresTeller/taller-tailwind-css/issues"
+  },
+  "homepage": "https://github.com/AndresTeller/taller-tailwind-css#readme",
   "description": ""
 }
