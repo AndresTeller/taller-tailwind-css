@@ -7,10 +7,13 @@
     @apply font-nunito;
   }
 
-  h1, h2 {
-    @apply text-colorPrincipal;
+  h1, h2, p {
+    @apply text-colorCuaternario;
   }
 
+  h1 {
+    @apply text-2xl font-semibold;
+  }
   .menu a{
     @apply text-colorCuaternario px-3 font-semibold hover:text-colorSecundario;
   }

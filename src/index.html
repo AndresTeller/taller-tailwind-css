@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="fixed bottom-0 w-full lg:bottom-auto lg:top-0">
-      <nav class="grid grid-cols-3 bg-colorPrincipal h-12 gap-2 justify-items-center items-center lg:grid-cols-2">
+      <nav class="grid grid-cols-3 bg-colorPrincipal h-12 gap-2 justify-items-center items-center lg:grid-cols-2 shadow-xl rounded ">
         <div class="col-start-2 lg:col-start-1 lg:justify-self-start">
           <img src="/assets/logo_azul_grande.png" class="w-10 rounded-full lg:ml-4">
         </div>
@@ -34,24 +34,22 @@
       </nav>
     </div>
     <!-- Section de encargados -->
-    <section>
-      <h1>Encargados</h1>
-      <article>
-        <img src="/assets/perfil-hombre.jpg">
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Arcu sociis eget duis id. Eu velit sed sed euismod odio orci penatibus. Tellus
+    <section class="grid justify-items-center px-4 mt-4 mx-4 rounded-xl bg-colorPrincipal gap-4 lg:mt-20 lg:grid-cols-5 lg:grid-rows-2 shadow-2xl">
+      <h1 class="mt-4 justify-self-center lg:col-start-3 lg:col-end-4 lg:text-3xl">Encargados</h1>
+      <img src="/assets/perfil-hombre.jpg" class="w-20 rounded-full shadow-2xl border-2 lg:row-start-1 lg:col-end-3 lg:self-end lg:w-40 xl:mt-8">
+      <p class="text-justify lg:col-end-3">
+        Lorem ipsum dolor sit amet consectetur. Arcu sociis eget duis id. Eu velit sed sed euismod odio orcipenatibus.
+        Tellus
         tellus tempus nibh dapibus proin. Ipsum elementum dictum habitasse sit et a.
-        </p>
-      </article>
-      <article>
-        <img src="/assets/perfil-mujer-1.jpg" alt="perfil-mujer">
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Arcu sociis eget duis id. Eu velit sed sed euismod odio orci penatibus.
-          Tellus
-          tellus tempus nibh dapibus proin. Ipsum elementum dictum habitasse sit et a.
-        </p>
-      </article>
+      </p>
+      <img src="/assets/perfil-mujer-1.jpg" class="w-20 rounded-full shadow-2xl border-2 lg:row-start-1 lg:col-end-5 lg:self-end lg:w-40 xl:mt-8">
+      <p class="mb-4 text-justify lg:col-end-5">
+        Lorem ipsum dolor sit amet consectetur. Arcu sociis eget duis id. Eu velit sed sed euismod odio orcipenatibus.
+        Tellus
+        tellus tempus nibh dapibus proin. Ipsum elementum dictum habitasse sit et a.
+      </p> 
     </section>
+    
     <!-- Section ¿Que hacemos? -->
     <section>
       <h2>¿Que hacemos?</h2>
