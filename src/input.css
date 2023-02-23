@@ -11,8 +11,12 @@
     @apply text-colorCuaternario;
   }
 
-  h1 {
+  h1, h2 {
     @apply text-2xl font-semibold;
+  }
+
+  ul li a {
+    @apply text-colorCuaternario;
   }
   .menu a{
     @apply text-colorCuaternario px-3 font-semibold hover:text-colorSecundario;
