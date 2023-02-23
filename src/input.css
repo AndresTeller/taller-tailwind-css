@@ -18,19 +18,23 @@
   ul li a {
     @apply text-colorCuaternario;
   }
-  .menu a{
-    @apply text-colorCuaternario px-3 font-semibold hover:text-colorSecundario;
+  
+  p {
+    @apply text-justify;
   }
 }
 
 @layer components {
-  
+  .image-section-opinion {
+    @apply w-20 rounded-full shadow-2xl border-2;
+  }
+
+  .menu a{
+    @apply text-colorCuaternario px-3 font-semibold hover:text-colorSecundario;
+  }
 }
 
 @layer utilities {
 
 }
 
-/* @screen(xl) {
-  
-} */
