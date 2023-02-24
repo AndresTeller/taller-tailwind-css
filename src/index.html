@@ -24,8 +24,8 @@
         <div class="col-start-2 lg:col-start-1 lg:justify-self-start">
           <img src="/assets/logo_azul_grande.png" class="w-10 rounded-full lg:ml-4">
         </div>
-        <div class="justify-self-end lg:hidden">
-          <img src="/assets/hamburguesa.svg" class="w-6 mr-4">
+        <div class="justify-self-end lg:hidden" id="hamburguesa">
+          <img src="/assets/hamburguesa.svg" class="w-6 mr-4 hover:cursor-pointer">
         </div>
         <div class="hidden lg:block lg:menu lg:justify-self-end mr-4">
           <a href="#section-encargados">Encargados</a>
@@ -36,6 +36,22 @@
       </nav>
     </div>
     
+    <!-- Menu desplegable movil -->
+    <div class="grid grid-cols-1 grid-rows-4 justify-items-center bg-colorPrincipal fixed bottom-0 w-full mb-12 h-44 menu-desplegable lg:hidden menu-desplegable" id="menu-desplegable">
+      <div class="">
+        <a href="#section-encargados" class="">Encargados</a>
+      </div>
+      <div>
+        <a href="#section-que-hacemos" class="">¿Que hacemos?</a>
+      </div>
+      <div>
+        <a href="#section-opinion" class="">Opiniones</a>
+      </div>
+      <div>
+        <a href="#section-contacto" class="">Contacto</a>
+      </div>
+    </div>
+
     <!-- Section de encargados -->
     <section id="section-encargados"
       class="grid justify-items-center px-4 mt-4 mx-4 rounded-xl bg-colorPrincipal gap-4 lg:mt-20 lg:grid-cols-5 lg:grid-rows-2 shadow-2xl lg:scroll-m-20"">

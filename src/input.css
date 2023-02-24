@@ -32,6 +32,10 @@
   .menu a{
     @apply text-colorCuaternario px-3 font-semibold hover:text-colorSecundario;
   }
+
+  .menu-desplegable div{
+    @apply text-colorCuaternario border-2 border-colorCuaternario w-full h-full grid justify-items-center items-center hover:bg-colorCuaternario hover:text-colorPrincipal hover:border-b-2 hover:border-colorPrincipal hover:cursor-pointer;
+  }
 }
 
 @layer utilities {
