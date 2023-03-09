@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/index.html"],
+  content: ["./src/**/*.html"],
   theme: {
     extend: {
       colors: {
@@ -10,8 +10,8 @@ module.exports = {
         colorCuaternario: "#FAFAFA",
       },
       fontFamily: {
-        nunito: ["Nunito","sans-serif"],
-      }
+        nunito: ["Nunito", "sans-serif"],
+      },
     },
   },
   plugins: [],
