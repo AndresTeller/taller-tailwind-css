@@ -1,6 +1,6 @@
-import { validateCode, validateDiscount } from "./validations.js";
-const d = document;
+import { validations } from "./validations.js";
 
+const d = document;
 const $guardarFactura = d.getElementById("guardar-factura"),
   $agregarArticulo = d.getElementById("agregar-articulo");
 
@@ -13,8 +13,11 @@ const $codigo = d.getElementById("codigo"),
 d.addEventListener("click", (e) => {
   if (e.target === $agregarArticulo) {
     e.preventDefault();
-    validateDiscount($descuento.value);
-    validateCode($codigo.value);
+    validations.validateCode($codigo.value);
+    validations.validateDiscount($descuento.value);
+    validations.validatePrice($precio.value);
+    validations.validateProduct($producto.value);
+    validations.validateQuantity($cantidad.value);
   }
 
   if (e.target === $guardarFactura) {
