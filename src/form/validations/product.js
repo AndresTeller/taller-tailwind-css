@@ -1,5 +1,7 @@
-import { validateCamp } from "./utility.js";
+import { isCamp } from "./utility.js";
 
 export const validateProduct = (product = "") => {
-  validateCamp(product);
+  if (!isCamp(product)) return "Por favor ingrese un producto.";
+
+  return true;
 };

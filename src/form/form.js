@@ -13,11 +13,12 @@ const $codigo = d.getElementById("codigo"),
 d.addEventListener("click", (e) => {
   if (e.target === $agregarArticulo) {
     e.preventDefault();
-    validations.validateCode($codigo.value);
-    validations.validateDiscount($descuento.value);
-    validations.validatePrice($precio.value);
-    validations.validateProduct($producto.value);
-    validations.validateQuantity($cantidad.value);
+    console.log(validations.validateCode($codigo.value));
+    console.log(validations.validateProduct($producto.value));
+    console.log(validations.validateQuantity($cantidad.value));
+    console.log(validations.validatePrice($precio.value));
+    console.log(validations.validateDiscount($descuento.value));
+    console.log("-------------------------------------");
   }
 
   if (e.target === $guardarFactura) {

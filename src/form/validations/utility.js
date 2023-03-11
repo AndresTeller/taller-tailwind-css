@@ -1,12 +1,11 @@
-export const validateCamp = (camp) => {
-  console.log(camp);
-  if (!camp) return alert("Por favor rellene todos los campos.");
+export const isCamp = (camp = "") => {
+  return camp;
 };
 
-export const validateNumber = (number = 0) => {
-  if (isNaN(number)) return alert("Solo se aceptan números");
+export const isNumber = (number = 0) => {
+  return !isNaN(number);
 };
 
-export const validatePositiveNumber = (number = 0) => {
-  if (number < 0) return alert("Solo se aceptan números positivos.");
+export const isPositiveNumber = (number = 0) => {
+  return number > 0;
 };
