@@ -41,20 +41,10 @@ exports.getFactura = async (req, res) => {
 
 exports.createFactura = async (req, res) => {
   try {
-    const {
-      codigo,
-      articulo,
-      cantidad,
-      precio,
-      subtotal,
-      porcentaje_descuento,
-      valor_descuento,
-      total,
-    } = req.body;
-
-    const [rows] = await pool.query(
-      `INSERT INTO factura (codigo, articulo, cantidad, precio, subtotal, porcentaje_descuento, valor_descuento, total) VALUES (?,?,?,?,?,?,?,?)`,
-      [
+    const products = req.body;
+    const newProducts = [];
+    for (const product of products) {
+      const {
         codigo,
         articulo,
         cantidad,
@@ -63,20 +53,38 @@ exports.createFactura = async (req, res) => {
         porcentaje_descuento,
         valor_descuento,
         total,
-      ]
-    );
+      } = product;
 
-    res.json({
-      id: rows.insertId,
-      codigo,
-      articulo,
-      cantidad,
-      precio,
-      subtotal,
-      porcentaje_descuento,
-      valor_descuento,
-      total,
-    });
+      const [rows] = await pool.query(
+        `INSERT INTO factura (codigo, articulo, cantidad, precio, subtotal, porcentaje_descuento, valor_descuento, total) VALUES (?,?,?,?,?,?,?,?)`,
+        [
+          codigo,
+          articulo,
+          cantidad,
+          precio,
+          subtotal,
+          porcentaje_descuento,
+          valor_descuento,
+          total,
+        ]
+      );
+
+      const newProduct = {
+        id: rows.insertId,
+        codigo,
+        articulo,
+        cantidad,
+        precio,
+        subtotal,
+        porcentaje_descuento,
+        valor_descuento,
+        total,
+      };
+
+      newProducts.push(newProduct);
+    }
+
+    res.json(newProducts);
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -84,3 +92,49 @@ exports.createFactura = async (req, res) => {
     });
   }
 };
+
+// exports.createFactura = async (req, res) => {
+//   try {
+//     const {
+//       codigo,
+//       articulo,
+//       cantidad,
+//       precio,
+//       subtotal,
+//       porcentaje_descuento,
+//       valor_descuento,
+//       total,
+//     } = req.body;
+
+//     const [rows] = await pool.query(
+//       `INSERT INTO factura (codigo, articulo, cantidad, precio, subtotal, porcentaje_descuento, valor_descuento, total) VALUES (?,?,?,?,?,?,?,?)`,
+//       [
+//         codigo,
+//         articulo,
+//         cantidad,
+//         precio,
+//         subtotal,
+//         porcentaje_descuento,
+//         valor_descuento,
+//         total,
+//       ]
+//     );
+
+//     res.json({
+//       id: rows.insertId,
+//       codigo,
+//       articulo,
+//       cantidad,
+//       precio,
+//       subtotal,
+//       porcentaje_descuento,
+//       valor_descuento,
+//       total,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       message: "Something goes wrong.",
+//     });
+//   }
+// };
