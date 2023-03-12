@@ -1,4 +1,4 @@
-import { validations } from "./validations.js";
+import { validations } from "./validations/validations.js";
 
 const d = document;
 const $guardarFactura = d.getElementById("guardar-factura"),
@@ -10,7 +10,50 @@ const $codigo = d.getElementById("codigo"),
   $precio = d.getElementById("precio"),
   $descuento = d.getElementById("descuento");
 
-d.addEventListener("click", (e) => {
+let subtotal, valorDescuento, total;
+
+const getFacturas = async () => {
+  try {
+    const response = await fetch("http://localhost:5000/api/facturas");
+    if (!response.ok)
+      throw { status: response.status, statusText: response.statusText };
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error.status);
+  }
+};
+
+const createFactura = async () => {
+  let options = {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify({
+      codigo: $codigo.value,
+      articulo: $producto.value,
+      cantidad: $cantidad.value,
+      precio: $precio.value,
+      subtotal: subtotal,
+      porcentaje_descuento: $descuento.value,
+      valor_descuento: valorDescuento,
+      total: total,
+    }),
+  };
+  try {
+    const response = await fetch("http://localhost:5000/api/facturas", options);
+    if (!response.ok)
+      throw { status: response.status, statusText: response.statusText };
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    const message = error.statusText || "Ha ocurrido un error.";
+    console.log(`Error ${error.status}: ${message}`);
+  }
+};
+
+d.addEventListener("click", async (e) => {
   if (e.target === $agregarArticulo) {
     e.preventDefault();
     console.log(validations.validateCode($codigo.value));
@@ -23,6 +66,9 @@ d.addEventListener("click", (e) => {
 
   if (e.target === $guardarFactura) {
     e.preventDefault();
-    console.log($cantidad.value, $producto, $precio);
+    subtotal = parseInt($cantidad.value) * parseFloat($precio.value);
+    valorDescuento = subtotal * parseFloat($descuento.value / 100);
+    total = subtotal - valorDescuento;
+    createFactura();
   }
 });
