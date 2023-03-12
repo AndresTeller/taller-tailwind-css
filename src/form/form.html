@@ -28,28 +28,32 @@
       <div class="w-full text-center">
         <h1 class="text-black text-4xl">Facturacion</h1>
       </div>
-      <!-- Errores -->
-      <div>
 
-      </div>
+      <!-- Errores -->
+      <div
+        id="contenedor-error"
+        class="bg-red-200 border-2 text-white rounded-lg border-red-600 w-1/2 p-2 text-center hidden mx-auto flex mt-8 justify-center "
+      ></div>
       <!-- Formulario -->
-      <form action="#" method="post" class="labels-form grid grid-cols-5 justify-items-center items-center mt-8">
+      <form
+        action="#"
+        method="post"
+        class="labels-form grid grid-cols-5 justify-items-center items-center mt-8"
+      >
         <!-- Input codigo de factura -->
         <div class="ml-8">
           <label for="codigo">Codigo de factura:</label>
-          <input type="text" id="codigo" placeholder="Codigo" class="caja-de-entrada"/>
+          <input
+            type="text"
+            id="codigo"
+            placeholder="Codigo"
+            class="caja-de-entrada"
+          />
         </div>
         <!-- Select de producto -->
         <div>
-          <label
-            for="producto"
-            class="block"
-            >Producto:</label
-          >
-          <select
-            id="producto"
-            class="caja-de-entrada"
-          >
+          <label for="producto" class="block">Producto:</label>
+          <select id="producto" class="caja-de-entrada">
             <option selected>Escoge el producto</option>
             <option value="Arroz">Arroz</option>
             <option value="Frijoles">Frijoles</option>
@@ -61,23 +65,41 @@
         <!-- Input cantidad -->
         <div class="ml-8">
           <label for="cantidad">Cantidad:</label>
-          <input type="number" id="cantidad" placeholder="Cantidad" class="caja-de-entrada"/>
+          <input
+            type="number"
+            id="cantidad"
+            placeholder="Cantidad"
+            class="caja-de-entrada"
+          />
         </div>
         <!-- Input precio -->
         <div>
           <label for="precio" class="block">Precio:</label>
-          <input type="number" id="precio" placeholder="Precio" class="caja-de-entrada"/>
+          <input
+            type="number"
+            id="precio"
+            placeholder="Precio"
+            class="caja-de-entrada"
+          />
         </div>
         <!-- Input descuento -->
         <div class="ml-8">
           <label for="descuento">Descuento:</label>
-          <input type="number" id="descuento" placeholder="Descuento" class="caja-de-entrada"/>
+          <input
+            type="number"
+            id="descuento"
+            placeholder="Descuento"
+            class="caja-de-entrada"
+          />
         </div>
         <div class="mt-8 col-start-2 col-end-5">
-          <button type="submit" id="agregar-articulo" class="botones mr-10">Agregar artículo</button>
-          <button type="submit" id="guardar-factura" class="botones">Guardar factura</button>
+          <button type="submit" id="agregar-articulo" class="botones mr-10">
+            Agregar artículo
+          </button>
+          <button type="submit" id="guardar-factura" class="botones">
+            Guardar factura
+          </button>
         </div>
-        
       </form>
       <!-- Tabla de productos -->
       <div class="relative overflow-x-auto hidden" id="tabla-productos">

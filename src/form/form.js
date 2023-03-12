@@ -8,9 +8,14 @@ const $codigo = d.getElementById("codigo"),
   $producto = d.getElementById("producto"),
   $cantidad = d.getElementById("cantidad"),
   $precio = d.getElementById("precio"),
-  $descuento = d.getElementById("descuento");
+  $descuento = d.getElementById("descuento"),
+  $contenedorError = d.getElementById("contenedor-error"),
+  $tablaProductos = d.getElementById("tabla-productos");
 
-let subtotal, valorDescuento, total;
+let subtotal,
+  valorDescuento,
+  total,
+  productos = [];
 
 const getFacturas = async () => {
   try {
@@ -53,22 +58,41 @@ const createFactura = async () => {
   }
 };
 
-d.addEventListener("click", async (e) => {
+const messageError = (errores = []) => {
+  for (let i = 0; i < errores.length; i++) {
+    if (errores[i] !== true) {
+      $contenedorError.classList.remove("hidden");
+      $contenedorError.innerHTML = `<p class = "text-red-600"> ${errores[i]} </p>`;
+      return true;
+    }
+  }
+  return false;
+};
+
+d.addEventListener("click", (e) => {
   if (e.target === $agregarArticulo) {
     e.preventDefault();
-    console.log(validations.validateCode($codigo.value));
-    console.log(validations.validateProduct($producto.value));
-    console.log(validations.validateQuantity($cantidad.value));
-    console.log(validations.validatePrice($precio.value));
-    console.log(validations.validateDiscount($descuento.value));
-    console.log("-------------------------------------");
-  }
+    let codeError = validations.validateCode($codigo.value),
+      productoError = validations.validateProduct($producto.value),
+      cantidadError = validations.validateQuantity($cantidad.value),
+      precioError = validations.validatePrice($precio.value),
+      descuentoError = validations.validateDiscount($descuento.value),
+      errores = [
+        codeError,
+        productoError,
+        cantidadError,
+        precioError,
+        descuentoError,
+      ];
 
-  if (e.target === $guardarFactura) {
-    e.preventDefault();
-    subtotal = parseInt($cantidad.value) * parseFloat($precio.value);
-    valorDescuento = subtotal * parseFloat($descuento.value / 100);
-    total = subtotal - valorDescuento;
-    createFactura();
+    messageError(errores);
+
+    if (e.target === $guardarFactura) {
+      e.preventDefault();
+      subtotal = parseInt($cantidad.value) * parseFloat($precio.value);
+      valorDescuento = subtotal * parseFloat($descuento.value / 100);
+      total = subtotal - valorDescuento;
+      createFactura();
+    }
   }
 });

@@ -46,7 +46,7 @@
   }
 
   .botones {
-    @apply rounded shadow border-2 border-solid bg-colorPrincipal text-white font-medium border-blue-900 p-1;
+    @apply rounded shadow border-2 border-solid bg-colorPrincipal text-white font-medium border-blue-900 p-1 hover:bg-slate-50 hover:text-blue-900 transition duration-500;
   }
 }
 
