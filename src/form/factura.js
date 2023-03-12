@@ -12,32 +12,13 @@ export const getFacturas = async () => {
   }
 };
 
-export const createFactura = async (
-  codigo,
-  producto,
-  cantidad,
-  precio,
-  descuento,
-) => {
-  let subtotal = getSubtotal(cantidad, precio),
-    valorDescuento = getValorDescuento(subtotal, descuento),
-    total = getTotal(subtotal, valorDescuento);
-  
+export const createFactura = async (products) => {
   let options = {
     method: "POST",
     headers: {
       "Content-type": "application/json; charset=utf-8",
     },
-    body: JSON.stringify({
-      codigo: codigo,
-      articulo: producto,
-      cantidad: cantidad,
-      precio: precio,
-      subtotal: subtotal,
-      porcentaje_descuento: descuento,
-      valor_descuento: valorDescuento,
-      total:  total,
-    }),
+    body: JSON.stringify(products),
   };
   try {
     const response = await fetch("http://localhost:5000/api/facturas", options);

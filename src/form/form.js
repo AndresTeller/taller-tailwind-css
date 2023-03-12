@@ -37,18 +37,13 @@ d.addEventListener("click", (e) => {
         $porcentajeDescuento.value
       );
       products.push(product);
+      console.log(products);
       generarTabla($tablaProductos, $tablaProductosCuerpo, product);
     }
   }
 
   if (e.target === $guardarFactura) {
     e.preventDefault();
-    createFactura(
-      $codigo.value,
-      $producto.value,
-      $cantidad.value,
-      $precio.value,
-      $porcentajeDescuento.value
-    );
+    createFactura(products);
   }
 });
