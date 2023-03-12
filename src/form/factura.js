@@ -1,5 +1,3 @@
-import { getSubtotal, getTotal, getValorDescuento } from "./utility.js";
-
 export const getFacturas = async () => {
   try {
     const response = await fetch("http://localhost:5000/api/facturas");
@@ -22,12 +20,14 @@ export const createFactura = async (products) => {
   };
   try {
     const response = await fetch("http://localhost:5000/api/facturas", options);
+    const json = await response.json();
+    if (!json.success) return console.log(json.message);
+
     if (!response.ok)
       throw { status: response.status, statusText: response.statusText };
-    const json = await response.json();
-    console.log(json);
   } catch (error) {
     const message = error.statusText || "Ha ocurrido un error.";
-    console.log(`Error ${error.status}: ${message}`);
+    console.log(`Error ${error.status}: ${message}.
+    ${error.description}`);
   }
 };
