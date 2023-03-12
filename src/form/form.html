@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Facturacion</title>
     <!-- Favicon -->
     <link
       rel="shortcut icon"
@@ -21,16 +21,89 @@
     <!-- Conexión Tailwind -->
     <link rel="stylesheet" href="/dist/output.css" />
   </head>
-  <body>
-    <form action="#" method="post">
-      <input type="text" id="codigo" placeholder="codigo" />
-      <input type="text" id="producto" placeholder="Producto" />
-      <input type="number" id="cantidad" placeholder="Cantidad" />
-      <input type="number" id="precio" placeholder="Precio" />
-      <input type="number" id="descuento" placeholder="Descuento" />
-      <button type="submit" id="agregar-articulo">Agregar artículo</button>
-      <button type="submit" id="guardar-factura">Guardar factura</button>
-    </form>
+  <body class="bg-slate-200">
+    <!-- Contenedor principal -->
+    <div class="w-full px-16 mt-16">
+      <!-- TITULO -->
+      <div class="w-full text-center">
+        <h1 class="text-black text-4xl">Facturacion</h1>
+      </div>
+      <!-- Errores -->
+      <div>
+
+      </div>
+      <!-- Formulario -->
+      <form action="#" method="post" class="labels-form grid grid-cols-5 justify-items-center items-center mt-8">
+        <!-- Input codigo de factura -->
+        <div class="ml-8">
+          <label for="codigo">Codigo de factura:</label>
+          <input type="text" id="codigo" placeholder="Codigo" class="caja-de-entrada"/>
+        </div>
+        <!-- Select de producto -->
+        <div>
+          <label
+            for="producto"
+            class="block"
+            >Producto:</label
+          >
+          <select
+            id="producto"
+            class="caja-de-entrada"
+          >
+            <option selected>Escoge el producto</option>
+            <option value="Arroz">Arroz</option>
+            <option value="Frijoles">Frijoles</option>
+            <option value="Lentejas">Lentejas</option>
+            <option value="Pollo">Pollo</option>
+            <option value="Huevos">Huevos</option>
+          </select>
+        </div>
+        <!-- Input cantidad -->
+        <div class="ml-8">
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" placeholder="Cantidad" class="caja-de-entrada"/>
+        </div>
+        <!-- Input precio -->
+        <div>
+          <label for="precio" class="block">Precio:</label>
+          <input type="number" id="precio" placeholder="Precio" class="caja-de-entrada"/>
+        </div>
+        <!-- Input descuento -->
+        <div class="ml-8">
+          <label for="descuento">Descuento:</label>
+          <input type="number" id="descuento" placeholder="Descuento" class="caja-de-entrada"/>
+        </div>
+        <div class="mt-8 col-start-2 col-end-5">
+          <button type="submit" id="agregar-articulo" class="botones mr-10">Agregar artículo</button>
+          <button type="submit" id="guardar-factura" class="botones">Guardar factura</button>
+        </div>
+        
+      </form>
+      <!-- Tabla de productos -->
+      <div class="relative overflow-x-auto hidden" id="tabla-productos">
+        <table
+          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+        >
+          <!-- Cabecera de la tabla -->
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">#</th>
+              <th scope="col" class="px-6 py-3">Producto</th>
+              <th scope="col" class="px-6 py-3">Cantidad</th>
+              <th scope="col" class="px-6 py-3">Precio unitario</th>
+              <th scope="col" class="px-6 py-3">Subtotal</th>
+              <th scope="col" class="px-6 py-3">% Descuento</th>
+              <th scope="col" class="px-6 py-3">Valor de descuento</th>
+              <th scope="col" class="px-6 py-3">Total</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
 
     <script src="./form.js" type="module"></script>
   </body>

@@ -36,9 +36,22 @@
   .menu-desplegable a{
     @apply text-colorCuaternario border-2 border-colorCuaternario w-full h-full grid justify-items-center items-center hover:bg-colorCuaternario hover:text-colorPrincipal hover:border-b-2 hover:border-colorPrincipal hover:cursor-pointer;
   }
+
+  .caja-de-entrada {
+    @apply bg-slate-50 shadow border-2 border-solid border-gray-700 rounded p-1 w-52;
+  }
+
+  .labels-form label {
+    @apply text-lg;
+  }
+
+  .botones {
+    @apply rounded shadow border-2 border-solid bg-colorPrincipal text-white font-medium border-blue-900 p-1;
+  }
 }
 
 @layer utilities {
 
 }
+
 
