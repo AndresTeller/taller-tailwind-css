@@ -28,14 +28,20 @@
       <div class="w-full text-center">
         <h1 class="text-black text-4xl">Facturacion</h1>
       </div>
-
-      <!-- Errores -->
+      
+      <!-- Error -->
       <div
-        id="contenedor-error"
+        id="contenedor-error1"
         class="bg-red-200 border-2 text-white rounded-lg border-red-600 w-1/2 p-2 text-center hidden mx-auto flex mt-8 justify-center texto-rojo"
+      ></div>
+      <!-- Exito -->
+      <div
+        id="contenedor-error2"
+        class="bg-green-200 border-2 text-white rounded-lg border-green-600 w-1/2 p-2 text-center  mx-auto flex mt-8 justify-center texto-verde hidden"
       ></div>
       <!-- Formulario -->
       <form
+        id="formulario"
         action="#"
         method="post"
         class="labels-form grid grid-cols-5 justify-items-center items-center mt-8"
@@ -96,7 +102,7 @@
           <button type="submit" id="agregar-articulo" class="botones mr-10">
             Agregar artículo
           </button>
-          <button type="submit" id="guardar-factura" class="botones">
+          <button type="submit" id="guardar-factura" class="botones" onclick="location.href='factura.html'">
             Guardar factura
           </button>
         </div>

@@ -4,7 +4,7 @@ export const getFacturas = async () => {
     if (!response.ok)
       throw { status: response.status, statusText: response.statusText };
     const data = await response.json();
-    console.log(data);
+    return data;
   } catch (error) {
     console.log(error.status);
   }
@@ -21,7 +21,7 @@ export const createFactura = async (products) => {
   try {
     const response = await fetch("http://localhost:5000/api/facturas", options);
     const json = await response.json();
-    if (!json.success) return console.log(json.message);
+    if (json.success === false) return console.log(json.message);
 
     if (!response.ok)
       throw { status: response.status, statusText: response.statusText };

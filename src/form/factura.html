@@ -23,7 +23,7 @@
   </head>
   <body class="">
     <!-- Contenedor principal -->
-    <div class="w-full h-full p-14">
+    <div class="w-full h-full px-52 py-20">
       <!-- Titulo principal -->
       <div class="border-2 border-black h-24 flex items-center justify-between">
         <p class="font-bold text-black ml-8 text-xl">Factura</p>
@@ -76,15 +76,28 @@
         </table>
       </div>
       <!-- Texto cuaternario -->
-      <div class="mt-12">
-        <p class="text-black">
-          Por favor, transfiera el importe de la factura a la cuenta bancaria
-          mencionada a continuacion.
-        </p>
-        <p class="text-black mt-8">Atentamente.</p>
+      <div class="mr-24">
+        <div class="mt-12">
+          <p class="text-black">
+            Por favor, transfiera el importe de la factura a la cuenta bancaria
+            mencionada a continuacion.
+          </p>
+          <p class="text-black mt-8">Atentamente.</p>
+        </div>
+        <div class="flex justify-between mt-12">
+          <p class="text-black">TC Green Inc.</p>
+          <p class="text-black">New York Bank.</p>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-black">Spring 13.</p>
+          <p class="text-black">IBAN: BCC634584110C800000.</p>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-black">5432 New York.</p>
+          <p class="text-black">BIC: 94849583363636.</p>
+        </div>
       </div>
     </div>
-
     <script src="./tablaFactura.js" type="module"></script>
   </body>
 </html>

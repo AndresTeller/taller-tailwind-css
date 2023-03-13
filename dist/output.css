@@ -630,6 +630,11 @@ p {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+.texto-verde p {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
 .tabla-tr tr {
   border-bottom-width: 1px;
   --tw-bg-opacity: 1;
@@ -712,6 +717,10 @@ p {
 
 .mr-10 {
   margin-right: 2.5rem;
+}
+
+.mr-24 {
+  margin-right: 6rem;
 }
 
 .mr-32 {
@@ -922,6 +931,11 @@ p {
   border-color: rgb(200 227 246 / var(--tw-border-opacity));
 }
 
+.border-green-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(22 163 74 / var(--tw-border-opacity));
+}
+
 .border-red-600 {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
@@ -942,6 +956,11 @@ p {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+}
+
 .bg-red-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
@@ -950,10 +969,6 @@ p {
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.p-14 {
-  padding: 3.5rem;
 }
 
 .p-2 {
@@ -974,14 +989,34 @@ p {
   padding-right: 1rem;
 }
 
+.px-44 {
+  padding-left: 11rem;
+  padding-right: 11rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-52 {
+  padding-left: 13rem;
+  padding-right: 13rem;
 }
 
 .text-left {

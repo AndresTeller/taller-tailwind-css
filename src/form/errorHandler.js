@@ -16,6 +16,9 @@ export const messageError = (errores = [], contenedor) => {
     if (errores[i] !== true) {
       contenedor.classList.remove("hidden");
       contenedor.innerHTML = `<p class = "text-red-600"> ${errores[i]} </p>`;
+      setTimeout(() => {
+        contenedor.classList.add("hidden");
+      }, 2000);
       return true;
     }
   }

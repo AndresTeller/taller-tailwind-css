@@ -12,13 +12,15 @@ const $codigo = d.getElementById("codigo"),
   $cantidad = d.getElementById("cantidad"),
   $precio = d.getElementById("precio"),
   $porcentajeDescuento = d.getElementById("descuento"),
-  $contenedorError = d.getElementById("contenedor-error"),
+  $contenedorError1 = d.getElementById("contenedor-error1"),
   $tablaProductosCuerpo = d.getElementById("tabla-productos-cuerpo"),
-  $tablaProductos = d.getElementById("tabla-productos");
+  $tablaProductos = d.getElementById("tabla-productos"),
+  $formulario = d.getElementById("formulario"),
+  $contenedorError2 = d.getElementById("contenedor-error2");
 
-const products = [];
+let products = [];
 
-d.addEventListener("click", (e) => {
+d.addEventListener("click", async (e) => {
   if (e.target === $agregarArticulo) {
     e.preventDefault();
     const errores = getErrores(
@@ -28,7 +30,7 @@ d.addEventListener("click", (e) => {
       $precio.value,
       $porcentajeDescuento.value
     );
-    if (!messageError(errores, $contenedorError)) {
+    if (!messageError(errores, $contenedorError1)) {
       const product = getProduct(
         $codigo.value,
         $producto.value,
@@ -37,7 +39,6 @@ d.addEventListener("click", (e) => {
         $porcentajeDescuento.value
       );
       products.push(product);
-      console.log(products);
       generarTabla($tablaProductos, $tablaProductosCuerpo, product);
     }
   }
@@ -45,5 +46,12 @@ d.addEventListener("click", (e) => {
   if (e.target === $guardarFactura) {
     e.preventDefault();
     createFactura(products);
+    $formulario.reset();
+    products = [];
+    $contenedorError2.classList.remove("hidden");
+    $contenedorError2.innerHTML = `<p class = ""> Se ha registrado correctamente </p>`;
+    setTimeout(() => {
+      $contenedorError2.classList.add("hidden");
+    }, 2000);
   }
 });
