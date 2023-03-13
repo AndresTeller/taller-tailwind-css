@@ -32,7 +32,7 @@
       <!-- Errores -->
       <div
         id="contenedor-error"
-        class="bg-red-200 border-2 text-white rounded-lg border-red-600 w-1/2 p-2 text-center hidden mx-auto flex mt-8 justify-center"
+        class="bg-red-200 border-2 text-white rounded-lg border-red-600 w-1/2 p-2 text-center hidden mx-auto flex mt-8 justify-center texto-rojo"
       ></div>
       <!-- Formulario -->
       <form
@@ -102,7 +102,7 @@
         </div>
       </form>
       <!-- Tabla de productos -->
-      <div class="relative overflow-x-auto hidden" id="tabla-productos">
+      <div class="relative overflow-x-auto hidden mt-12" id="tabla-productos">
         <table
           class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
         >
@@ -122,7 +122,10 @@
             </tr>
           </thead>
           <!-- Cuerpo de la tabla -->
-          <tbody id="tabla-productos-cuerpo"></tbody>
+          <tbody
+            id="tabla-productos-cuerpo"
+            class="tabla-tr tabla-th tabla-td"
+          ></tbody>
         </table>
       </div>
     </div>

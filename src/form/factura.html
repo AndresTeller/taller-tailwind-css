@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factura</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/assets/logo-redondo.jpg"
+      type="image/x-icon"
+    />
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Conexión Tailwind -->
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body class="">
+    <!-- Contenedor principal -->
+    <div class="w-full h-full p-14">
+      <!-- Titulo principal -->
+      <div class="border-2 border-black h-24 flex items-center justify-between">
+        <p class="font-bold text-black ml-8 text-xl">Factura</p>
+        <p class="font-bold text-black mr-36 text-xl">TC Green Inc.</p>
+      </div>
+      <!-- Texto secundario -->
+      <div class="mt-24">
+        <p class="text-black text-sm">TC Green Inc. Spring 13- 5432 New York</p>
+        <div class="flex items-center justify-between mt-16">
+          <p class="text-black">Bill Smith</p>
+          <p class="text-black mr-32">Data: 20.06.2020</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-black">1234 Spring</p>
+          <p class="text-black mr-32">Cliente ID: 29485858</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-black">Apl 4B</p>
+          <p class="text-black mr-32">Factura N..:8394848</p>
+        </div>
+      </div>
+      <!-- Texto terceario -->
+      <div class="mt-16">
+        <p class="text-black font-bold">Factura N..:8394848</p>
+        <p class="text-black mt-8">Hola Sr. Bill.</p>
+        <p class="text-black mt-8">Gracias por tu orden.</p>
+      </div>
+
+      <!-- Tabla -->
+      <div class="relative overflow-x-auto mt-12" id="tabla-productos">
+        <table
+          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+        >
+          <!-- Cabecera de la tabla -->
+          <thead
+            class="text-xs text-white uppercase bg-blue-500 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">Descripción</th>
+              <th scope="col" class="px-6 py-3">Precio unit en €</th>
+              <th scope="col" class="px-6 py-3">Cantidad</th>
+              <th scope="col" class="px-6 py-3">Total en €</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody
+            id="tabla-productos-cuerpo"
+            class="tabla-tr tabla-th tabla-td"
+          ></tbody>
+        </table>
+      </div>
+      <!-- Texto cuaternario -->
+      <div class="mt-12">
+        <p class="text-black">
+          Por favor, transfiera el importe de la factura a la cuenta bancaria
+          mencionada a continuacion.
+        </p>
+        <p class="text-black mt-8">Atentamente.</p>
+      </div>
+    </div>
+
+    <script src="./tablaFactura.js" type="module"></script>
+  </body>
+</html>
