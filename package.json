@@ -69,7 +69,8 @@
   },
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "dev": "nodemon src/backend/index.js"
+    "dev": "nodemon src/backend/index.js",
+    "start": "node src/backend/index.js"
   },
   "keywords": [],
   "author": "",
