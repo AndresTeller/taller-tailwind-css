@@ -1,10 +1,13 @@
 const express = require("express");
 const facturasRoutes = require("./routes/facturas.routes.js");
+const cors = require("cors");
 
 const app = express(),
   PORT = 5000;
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use(facturasRoutes);
 
