@@ -5,7 +5,9 @@ import { generarTabla } from "./tablaProducto.js";
 
 const d = document;
 const $guardarFactura = d.getElementById("guardar-factura"),
-  $agregarArticulo = d.getElementById("agregar-articulo");
+  $agregarArticulo = d.getElementById("agregar-articulo"),
+  $buscarProducto = d.getElementById("buscar-producto"),
+  $buscar = d.getElementById("buscar");
 
 const $codigo = d.getElementById("codigo"),
   $producto = d.getElementById("producto"),
@@ -53,5 +55,16 @@ d.addEventListener("click", async (e) => {
     setTimeout(() => {
       $contenedorError2.classList.add("hidden");
     }, 2000);
+  }
+
+  if (e.target === $buscarProducto) {
+    e.preventDefault();
+    const codigo = { value: $buscar.value };
+    localStorage.setItem("codigo", JSON.stringify(codigo));
+
+    const json = localStorage.getItem("codigo");
+    const code = JSON.parse(json);
+
+    console.log(code.value);
   }
 });

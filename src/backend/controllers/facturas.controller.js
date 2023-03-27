@@ -1,4 +1,3 @@
-const { async } = require("postcss-js");
 const { pool } = require("../db.js");
 
 exports.getFacturas = async (req, res) => {
@@ -21,7 +20,6 @@ exports.getFactura = async (req, res) => {
     const [rows] = await pool.query(`SELECT * FROM factura WHERE codigo = ?`, [
       req.params.codigo,
     ]);
-    console.log(rows);
     if (rows.length <= 0)
       return res.status(404).json({
         success: false,

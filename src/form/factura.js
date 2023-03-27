@@ -10,6 +10,18 @@ export const getFacturas = async () => {
   }
 };
 
+export const getFacturasByCode = async (code) => {
+  try {
+    const response = await fetch(`http://localhost:5000/api/facturas/${code}`);
+    if (!response.ok)
+      throw { status: response.status, statusText: response.statusText };
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error.status);
+  }
+};
+
 export const createFactura = async (products) => {
   let options = {
     method: "POST",
