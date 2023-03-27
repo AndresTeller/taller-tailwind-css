@@ -44,6 +44,7 @@ exports.createFactura = async (req, res) => {
   try {
     const products = req.body;
     const newProducts = [];
+    let isValidate = false;
     for (const product of products) {
       const {
         codigo,
@@ -57,16 +58,19 @@ exports.createFactura = async (req, res) => {
       } = product;
 
       //Validar código único
-      const [existingRows] = await pool.query(
-        `SELECT * FROM factura WHERE codigo = ?`,
-        [codigo]
-      );
+      if (!isValidate) {
+        const [existingRows] = await pool.query(
+          `SELECT * FROM factura WHERE codigo = ?`,
+          [codigo]
+        );
 
-      if (existingRows.length > 0) {
-        return res.status(400).json({
-          success: false,
-          message: `El código ${codigo} ya está en uso.`,
-        });
+        if (existingRows.length > 0) {
+          return res.status(400).json({
+            success: false,
+            message: `El código ${codigo} ya está en uso.`,
+          });
+        }
+        isValidate = true;
       }
 
       //Inserción productos
