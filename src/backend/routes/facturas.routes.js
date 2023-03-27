@@ -7,7 +7,7 @@ const {
 
 const router = Router(),
   ROUTE = "/api/facturas/",
-  ROUTE_ID = "/api/facturas/:id";
+  ROUTE_CODIGO = "/api/facturas/:codigo";
 
 router.options(ROUTE, (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -17,7 +17,7 @@ router.options(ROUTE, (req, res) => {
 
 router.get(ROUTE, getFacturas);
 
-router.get(ROUTE_ID, getFactura);
+router.get(ROUTE_CODIGO, getFactura);
 
 router.post(ROUTE, createFactura);
 
