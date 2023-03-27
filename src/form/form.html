@@ -70,7 +70,7 @@
         </div>
         <!-- Input cantidad -->
         <div class="ml-8">
-          <label for="cantidad">Cantidad:</label>
+          <label class="block" for="cantidad">Cantidad:</label>
           <input
             type="number"
             id="cantidad"
@@ -90,7 +90,7 @@
         </div>
         <!-- Input descuento -->
         <div class="ml-8">
-          <label for="descuento">Descuento:</label>
+          <label class="block" for="descuento">Descuento:</label>
           <input
             type="number"
             id="descuento"
@@ -108,10 +108,10 @@
         </div>
       </form>
       <!-- Búsqueda de productos dado una factura -->
-      <section>
-        <label for="buscar">Buscar</label>
-        <input type="text" required id="buscar">
-        <button id="buscar-producto" onclick="location.href='factura-busqueda.html'">Enviar</button>
+      <section class="flex justify-center items-center mt-10">
+        <label for="buscar" class="mr-20"><b>Buscar:</b></label>
+        <input type="text" required id="buscar" class="caja-de-entrada" autocomplete="off">
+        <button id="buscar-producto" onclick="location.href='factura-busqueda.html'" class="ml-20 botones px-3">Enviar</button>
       </section>
 
       <!-- Tabla de productos -->

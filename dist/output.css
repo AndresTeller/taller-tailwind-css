@@ -711,12 +711,20 @@ p {
   margin-bottom: 1rem;
 }
 
+.ml-20 {
+  margin-left: 5rem;
+}
+
 .ml-8 {
   margin-left: 2rem;
 }
 
 .mr-10 {
   margin-right: 2.5rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
 }
 
 .mr-24 {
@@ -733,6 +741,10 @@ p {
 
 .mr-4 {
   margin-right: 1rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-12 {
@@ -984,14 +996,19 @@ p {
   padding-right: 4rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.px-44 {
-  padding-left: 11rem;
-  padding-right: 11rem;
+.px-52 {
+  padding-left: 13rem;
+  padding-right: 13rem;
 }
 
 .px-6 {
@@ -1007,16 +1024,6 @@ p {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-52 {
-  padding-left: 13rem;
-  padding-right: 13rem;
 }
 
 .text-left {
