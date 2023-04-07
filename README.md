@@ -1,5 +1,5 @@
 # Proyecto Tailwind Css
-Este es un proyecto realizado para la Universidad Autónoma del Caribe Barranquilla, en este proyecto se debía realizar una página web que utilizara el framework <a href="https://tailwindcss.com/">Tailwind Css </a>.
+Este es un proyecto realizado para la Universidad Autónoma del Caribe Barranquilla, en este proyecto se debía realizar una página web que utilizara el framework <a href="https://tailwindcss.com/">Tailwind Css</a>.
 
 ## Estructura del proyecto
 El proyecto consta principalmente de tres secciones:
@@ -12,23 +12,33 @@ Por último, la tercera sección es el form, en esta sección se realizó el for
 
 ## ¿Cómo empezar?
 Para empezar a probar este proyecto es necesario ejecutar las siguientes líneas de comando
+
+Para instalar las dependencias:
 ```bash
-npm install # Instalar las dependencias.
-npm run build # Construir Tailwind Css
-npm start # Levantar el servidor (puerto 5000 por defecto).
+npm install
+```
+
+Para ejecutar Tailwind Css:
+```bash
+npm run build
+```
+
+Para levantar el servidor (puerto 5000 por defecto):
+```bash
+npm start
 ```
 
 ## ¿Cómo conectar la base de datos?
-Para crear la base de datos es necesario crear un archivo de variables de entorno <code>.env</code> en la raíz del proyecto.
+Para crear la base de datos es necesario crear un archivo <code>.env</code> en la raíz del proyecto.
 
 Las varaibles de entorno que se deben proporcionar para realizar la conexión a la base de datos que se tenga son las siguientes:
 ```js
 PORT = 
 DB_HOST = 
-DB_USER = 
+DB_USER =
 DB_PASSWORD = 
 DB_PORT = 
-DB_NAME = 
+DB_NAME =
 ```
 
 En caso de no proporcionar dichos valores, se tomarán los valores por defecto.
